@@ -17,33 +17,51 @@ export default class ArrayHolder {
     }
 
     getElementByIndex(index) {
-        if (typeof(this.arrayStore[index]) !== "Undefined") {
-            throw new Error("Array is empty. Cannot getting the element from empty array.")
+        if (typeof(this.arrayStore[index]) === "undefined") {
+            throw new Error("Unexisting element. Cannot get element with index was given")
         }
         return this.arrayStore[index];
     }
 
     removeElementByIndex(index) {
+        if (typeof(this.arrayStore[index]) === "undefined") {
+            throw new Error("Array is epmty. Cannot delete element from epmty array")
+        }
         return this.arrayStore.slice(index, 1);
     }
 
     sum() {
+        if (typeof(this.arrayStore[index]) === "undefined") {
+            return 0
+        }
         return this.arrayStore.reduce((a, b) => a + b);
     }
 
     average() {
+        if (typeof(this.arrayStore[index]) === "undefined") {
+            return 0
+        }
         return this.sum() / this.arrayStore.length;
     }
 
     geometricMean() {
+        if (typeof(this.arrayStore[index]) === "undefined") {
+            return 0
+        }
         return Math.pow(this.sum(), 1 / this.arrayStore.length);
     }
 
     min() {
+        if (typeof(this.arrayStore[index]) === "undefined") {
+            return 0
+        }
         return Math.min(...this.arrayStore);
     }
 
     max() {
+        if (typeof(this.arrayStore[index]) === "undefined") {
+            return 0
+        }
         return Math.max(...this.arrayStore);
     }
 };
