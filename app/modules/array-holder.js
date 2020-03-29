@@ -17,6 +17,9 @@ export default class ArrayHolder {
     }
 
     getElementByIndex(index) {
+        if (typeof(this.arrayStore[index]) !== "Undefined") {
+            throw new Error("Array is empty. Cannot getting the element from empty array.")
+        }
         return this.arrayStore[index];
     }
 
