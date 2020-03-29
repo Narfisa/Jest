@@ -31,35 +31,35 @@ export default class ArrayHolder {
     }
 
     sum() {
-        if (typeof(this.arrayStore[index]) === "undefined") {
+        if (this.arrayStore === []) {
             return 0
         }
         return this.arrayStore.reduce((a, b) => a + b);
     }
 
     average() {
-        if (typeof(this.arrayStore[index]) === "undefined") {
+        if (this.arrayStore === []) {
             return 0
         }
         return this.sum() / this.arrayStore.length;
     }
 
     geometricMean() {
-        if (typeof(this.arrayStore[index]) === "undefined") {
+        if (this.arrayStore === []) {
             return 0
         }
         return Math.pow(this.sum(), 1 / this.arrayStore.length);
     }
 
     min() {
-        if (typeof(this.arrayStore[index]) === "undefined") {
+        if (this.arrayStore === []) {
             return 0
         }
         return Math.min(...this.arrayStore);
     }
 
     max() {
-        if (typeof(this.arrayStore[index]) === "undefined") {
+        if (this.arrayStore === []) {
             return 0
         }
         return Math.max(...this.arrayStore);

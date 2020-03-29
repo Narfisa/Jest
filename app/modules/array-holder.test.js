@@ -16,3 +16,22 @@ test("get element by index", () => {
         arrayHolder.getElementByIndex(0)
     }).toBe(array[0])
 })
+
+test("instance created", () => {
+    let arrayHolder = new ArrayHolder()
+    expect(() => {
+        arrayHolder.average()
+    }).toBe(0)
+    expect(() => {
+        arrayHolder.geometricMean()
+    }).toBe(0)
+    expect(() => {
+        arrayHolder.sum()
+    }).toBe(0)
+    expect(() => {
+        arrayHolder.max()
+    }).toBe(0)
+    expect(() => {
+        arrayHolder.min()
+    }).toBe(0)
+})
