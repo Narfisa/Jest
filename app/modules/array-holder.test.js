@@ -23,3 +23,13 @@ test("instance created", () => {
     expect(arrayHolder.max()).toBe(0)
     expect(arrayHolder.min()).toBe(0)
 })
+
+test("instance created and adding 1 value", () => {
+    let arrayHolder = new ArrayHolder()
+    arrayHolder.set([1])
+    expect(arrayHolder.average()).toBe(1)
+    expect(arrayHolder.geometricMean()).toBe(1)
+    expect(arrayHolder.sum()).toBe(1)
+    expect(arrayHolder.max()).toBe(1)
+    expect(arrayHolder.min()).toBe(1)
+})
