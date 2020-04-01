@@ -33,3 +33,14 @@ test("instance created and adding 1 value", () => {
     expect(arrayHolder.max()).toBe(1)
     expect(arrayHolder.min()).toBe(1)
 })
+
+test("Array=[1,2,3]. Deleted last value.", () => {
+    let arrayHolder = new ArrayHolder()
+    arrayHolder.set([1,2,3])
+    arrayHolder.removeElementByIndex(2)
+    expect(arrayHolder.average()).toBeCloseTo(1.5)
+    expect(arrayHolder.geometricMean()).toBeCloseTo(Math.sqrt(2))
+    expect(arrayHolder.sum()).toBe(3)
+    expect(arrayHolder.max()).toBe(2)
+    expect(arrayHolder.min()).toBe(1)
+})

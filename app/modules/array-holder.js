@@ -27,7 +27,7 @@ export default class ArrayHolder {
         if (this.arrayStore.length == 0) {
             throw new Error("Array is epmty. Cannot delete element from epmty array")
         }
-        return this.arrayStore.slice(index, 1);
+        return this.arrayStore.splice(index, 1);        
     }
 
     sum() {
@@ -35,6 +35,13 @@ export default class ArrayHolder {
             return 0
         }
         return this.arrayStore.reduce((a, b) => a + b);
+    }
+
+    mul() {
+        if (this.arrayStore.length == 0) {
+            return 0
+        }
+        return this.arrayStore.reduce((a, b) => a * b);
     }
 
     average() {
@@ -48,7 +55,7 @@ export default class ArrayHolder {
         if (this.arrayStore.length == 0) {
             return 0
         }
-        return Math.pow(this.sum(), 1 / this.arrayStore.length);
+        return Math.pow(this.mul(), 1 / this.arrayStore.length);
     }
 
     min() {
