@@ -8,6 +8,10 @@
     "build": "cross-env NODE_ENV=production webpack",
     "test": "jest"
   },
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": ["html"]
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
